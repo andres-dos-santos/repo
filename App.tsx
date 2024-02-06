@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { Image, SafeAreaView } from 'react-native'
+import { Image } from 'react-native'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { NavigationContainer } from '@react-navigation/native'
@@ -38,19 +38,17 @@ export default function App() {
 
   return (
     <>
-      <StatusBar backgroundColor={white} style="dark" />
+      <StatusBar style="light" backgroundColor="#305A96" />
 
       <GestureHandlerRootView style={{ flex: 1 }}>
         <QueryClientProvider client={client}>
-          <SafeAreaView className="flex-1 bg-white">
-            <NavigationContainer>
-              <ToastProvider>
-                <SessionProvider>
-                  <Main />
-                </SessionProvider>
-              </ToastProvider>
-            </NavigationContainer>
-          </SafeAreaView>
+          <NavigationContainer>
+            <ToastProvider>
+              <SessionProvider>
+                <Main />
+              </SessionProvider>
+            </ToastProvider>
+          </NavigationContainer>
         </QueryClientProvider>
       </GestureHandlerRootView>
     </>

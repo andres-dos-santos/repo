@@ -3,10 +3,13 @@ import { Image } from 'react-native'
 import { useEffect, useState } from 'react'
 import { useMMKVString } from 'react-native-mmkv'
 
-import { URL as APIURL } from '../../../lib/api'
+import clsx from 'clsx'
+import { URL } from '../../../lib/api'
+import { Div } from '../../../components/ui/div'
 
 type Props = {
-  id: number
+  id: number | string
+  size?: number
 }
 
 export function BranchImage(props: Props) {
@@ -15,7 +18,7 @@ export function BranchImage(props: Props) {
   const [image, setImage] = useState<string | null>(null)
 
   useEffect(() => {
-    fetch(`${APIURL}filiais/1/logo`, {
+    fetch(`${URL}filiais/${props.id}/logo`, {
       headers: {
         Authorization: jwt,
         'Content-Type': 'image/png',
@@ -34,13 +37,23 @@ export function BranchImage(props: Props) {
         reader.readAsDataURL(data)
       })
       .catch((error) => console.log(error))
-  }, [jwt])
+  }, [jwt, props.id])
 
   return (
-    <Image
-      source={{ uri: `data:image/png;base64,${image}` }}
-      style={{ width: 50, height: 50 }}
-      alt=""
-    />
+    <Div
+      className="rounded-full items-center justify-center"
+      style={{ width: props.size + 5 || 55, height: props.size + 5 || 55 }}
+    >
+      <Image
+        source={{ uri: `data:image/png;base64,${image}` }}
+        style={{
+          width: props.size || 50,
+          height: props.size || 50,
+          borderRadius: 9999,
+        }}
+        resizeMode="contain"
+        alt=""
+      />
+    </Div>
   )
 }

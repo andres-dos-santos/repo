@@ -29,7 +29,7 @@ export function Main() {
         animation: 'slide_from_right',
         contentStyle: {
           backgroundColor: white,
-          paddingTop: Platform.OS === 'ios' ? 60 : 30,
+          // paddingTop: Platform.OS === 'ios' ? 60 : 30,
         },
       }}
       initialRouteName={initialRouteName}

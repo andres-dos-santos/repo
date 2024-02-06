@@ -13,7 +13,6 @@ import { useFetch } from '../../../hooks/use-fetch'
 import type { API } from '../../../types/api'
 import type { BranchDTO } from '../../../types/dtos/branch-dto'
 import type { NavigateToDetails } from '../../../types/navigation-to-details'
-import { zinc } from 'tailwindcss/colors'
 import { StatusBar } from 'expo-status-bar'
 
 export function All() {
@@ -23,7 +22,6 @@ export function All() {
     'load-all-branches-query',
     'filiais',
   )
-  console.log(data)
 
   function navigateToDetails(values: NavigateToDetails) {
     push('details', values)

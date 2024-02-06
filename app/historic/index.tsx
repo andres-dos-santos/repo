@@ -1,6 +1,6 @@
 import { ActivityIndicator, FlatList } from 'react-native'
-import { ArrowDown, ArrowUp, Article } from 'phosphor-react-native'
-import { green, red, white, zinc } from 'tailwindcss/colors'
+import { ArrowDown, ArrowUp } from 'phosphor-react-native'
+import { green, red } from 'tailwindcss/colors'
 import clsx from 'clsx'
 import dayjs from 'dayjs'
 import Animated, { FadeInDown } from 'react-native-reanimated'
@@ -19,13 +19,11 @@ import {
   BottomSheetModal,
   type BottomSheetRefType,
 } from '../../components/bottom-sheet-modal'
-import { Currency } from '../../components/ui/currency'
 
 import type { API } from '../../types/api'
 import type { CashbackDTO } from '../../types/dtos/cashback-dto'
 
 import 'dayjs/locale/pt-br'
-import { StatusBar } from 'expo-status-bar'
 
 dayjs.locale('pt-br')
 
@@ -47,7 +45,7 @@ export function Historic() {
 
   return (
     <>
-      <Header.Root>
+      <Header.Root className='border-b border-zinc-200'>
         <Header.Left>
           <Header.Back />
 
@@ -60,6 +58,7 @@ export function Historic() {
       {data && data.totalElements > 0 ? (
         <FlatList
           data={data.content}
+          showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingHorizontal: 20, paddingVertical: 20 }}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (

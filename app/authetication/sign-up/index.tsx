@@ -35,7 +35,7 @@ export function SignUp() {
 
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-      <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 80 }} showsVerticalScrollIndicator={false}>
         <Div className="px-10 pt-14 flex-1 relative">
           <Div className="flex-row items-center justify-between ">
             <Div className="flex-row items-center space-x-5">

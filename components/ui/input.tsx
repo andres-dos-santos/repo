@@ -41,7 +41,7 @@ function Write(props: ComponentProps<typeof TextInput>) {
       onBlur={() => setFocus(false)}
       placeholderTextColor={zinc[400]}
       className={clsx(
-        'text-zinc-900 text-sm font-400 px-4 bg-zinc-100 h-[50px] rounded-2xl w-full border border-zinc-100 flex-row items-center justify-center',
+        'text-zinc-900 text-sm font-400 px-4 bg-zinc-100 h-[50px] pb-1 rounded-2xl w-full border border-zinc-100 flex-row items-center justify-center',
         {
           'border-[#305A96]': focus,
         },
