@@ -1,11 +1,12 @@
 import { TextProps, ViewProps } from 'react-native'
+import clsx from 'clsx'
 
 import { P } from './ui/p'
 import { Div } from './ui/div'
 
 function Root(props: ViewProps) {
   return (
-    <Div className="flex-row items-center justify-between my-7 px-7">
+    <Div className={clsx("flex-row items-center justify-between my-7 px-7", props.className)}>
       {props.children}
     </Div>
   )

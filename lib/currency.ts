@@ -1,7 +1,7 @@
 import { formatCurrency } from 'react-native-format-currency'
 
 export function currency(amount: number) {
-  const [_, value] = formatCurrency({
+  const [_, value, value2] = formatCurrency({
     amount,
     code: 'BRL',
   })

@@ -1,7 +1,6 @@
 export const URL = 'https://225c-177-131-167-75.ngrok-free.app/api/v1/'
 // export const URL = 'http://zaal.no-ip.info:8083/api/v1/'
 
-
 async function get<D>(url: string, jwt?: string, contentType?: string) {
   const response = await fetch(`${URL}${url}`, {
     method: 'GET',
